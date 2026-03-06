@@ -1,0 +1,10 @@
+{
+  "name": "mapna-early-warning-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Responsive MAPNA early warning portfolio prototype",
+  "scripts": {
+    "start": "node server.js",
+    "preview": "node server.js"
+  }
+}

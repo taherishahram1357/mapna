@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>سیستم هشدار زودهنگام پورتفولیو مپنا</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>سیستم هشدار زودهنگام پورتفولیو مپنا</h1>
+      <nav>
+        <button class="tab-btn active" data-tab="projects">پروژه‌ها</button>
+        <button class="tab-btn" data-tab="materials">تجهیزات/متریال</button>
+        <button class="tab-btn" data-tab="contractors">پیمانکاران</button>
+        <button class="tab-btn" data-tab="suppliers">تأمین‌کنندگان</button>
+        <button class="tab-btn" data-tab="clients">کارفرما</button>
+      </nav>
+    </header>
+
+    <main class="layout">
+      <aside class="left-panel">
+        <section>
+          <h2>پیمانکاران پروژه انتخابی</h2>
+          <div id="contractorsList" class="list"></div>
+        </section>
+        <section>
+          <h2>تأمین‌کنندگان پروژه انتخابی</h2>
+          <div id="suppliersList" class="list"></div>
+        </section>
+      </aside>
+
+      <section class="center-panel">
+        <div class="dashboard">
+          <article>
+            <h3>مبلغ قراردادها</h3>
+            <p id="sumContract">0</p>
+          </article>
+          <article>
+            <h3>مبلغ دریافتی قراردادها</h3>
+            <p id="sumReceived">0</p>
+          </article>
+          <article>
+            <h3>مبلغ هزینه پروژه‌ها</h3>
+            <p id="sumCost">0</p>
+          </article>
+          <article>
+            <h3>سود / زیان تخمینی</h3>
+            <p id="sumProfit">0</p>
+          </article>
+        </div>
+
+        <section id="alerts" class="alerts"></section>
+
+        <section class="scenario">
+          <h2>سناریو و ویرایش پارامترها</h2>
+          <div class="grid-2">
+            <label>ضریب قانون جدید دستمزد منابع انسانی
+              <input id="wageFactor" type="number" min="0.5" max="3" step="0.01" />
+            </label>
+            <label>ضریب فهرست بهایی کالا و خدمات
+              <input id="goodsFactor" type="number" min="0.5" max="3" step="0.01" />
+            </label>
+            <label>ضریب قیمت متریال مصرفی
+              <input id="materialFactor" type="number" min="0.5" max="3" step="0.01" />
+            </label>
+            <label>آستانه هشدار سود پروژه (% از مبلغ قرارداد)
+              <input id="profitThreshold" type="number" min="0" max="50" step="0.5" />
+            </label>
+          </div>
+          <button id="applyScenario">اعمال سناریو</button>
+        </section>
+
+        <section>
+          <h2>جزئیات پروژه انتخابی</h2>
+          <div id="projectDetails" class="table-wrap"></div>
+        </section>
+      </section>
+
+      <aside class="right-panel">
+        <h2>لیست پروژه‌ها</h2>
+        <div id="projectsList" class="list"></div>
+      </aside>
+    </main>
+
+    <footer>
+      <h2>کارفرماها (مرتب‌شده بر اساس مبلغ قرارداد)</h2>
+      <div id="clientsList" class="list horizontal"></div>
+    </footer>
+
+    <template id="rowTemplate">
+      <div class="row-item">
+        <div class="row-title"></div>
+        <div class="meta"></div>
+        <div class="progress"><span></span></div>
+      </div>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
