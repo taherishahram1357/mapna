@@ -1,0 +1,17 @@
+{
+  "name": "crypto-entry-exit-signal-app",
+  "version": "1.0.0",
+  "description": "Persian crypto technical analysis app for entry and exit signals based on MA, MACD, RSI, and Bollinger Bands.",
+  "type": "module",
+  "scripts": {
+    "test": "node tests/indicator.test.js",
+    "start": "python3 -m http.server 4173"
+  },
+  "keywords": [
+    "crypto",
+    "technical-analysis",
+    "persian",
+    "signals"
+  ],
+  "license": "MIT"
+}

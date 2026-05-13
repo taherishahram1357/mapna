@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>سیگنال ورود و خروج رمز ارز</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero card">
+        <div>
+          <p class="eyebrow">داشبورد تحلیل تکنیکال</p>
+          <h1>نقاط ورود و خروج چند رمز ارز</h1>
+          <p class="hero-text">
+            این اپلیکیشن با استفاده از میانگین متحرک ۲۰۰، میانگین متحرک ۱۰۰، MACD با دوره ۱۴، RSI و باندهای بولینگر، برای هر رمز ارز یک پیشنهاد معاملاتی قابل بررسی می‌سازد.
+          </p>
+        </div>
+        <div class="risk-box">
+          <strong>هشدار ریسک</strong>
+          <span>این خروجی توصیه مالی نیست؛ قبل از معامله مدیریت سرمایه و تایید شخصی را لحاظ کنید.</span>
+        </div>
+      </section>
+
+      <section class="controls card" aria-label="تنظیمات تحلیل">
+        <label>
+          رمز ارزها
+          <textarea id="symbols" rows="3">BTCUSDT, ETHUSDT, BNBUSDT, SOLUSDT, XRPUSDT</textarea>
+        </label>
+        <label>
+          تایم‌فریم
+          <select id="interval">
+            <option value="4h">۴ ساعته</option>
+            <option value="1h">۱ ساعته</option>
+            <option value="1d" selected>روزانه</option>
+            <option value="1w">هفتگی</option>
+          </select>
+        </label>
+        <label>
+          تعداد کندل
+          <input id="limit" type="number" min="220" max="1000" value="365" />
+        </label>
+        <button id="analyzeBtn" type="button">تحلیل کن</button>
+      </section>
+
+      <section class="status card" id="status">برای شروع روی «تحلیل کن» بزنید.</section>
+
+      <section class="layout">
+        <div class="card chart-card">
+          <div class="section-title">
+            <h2>نمودار قیمت و سطوح کلیدی</h2>
+            <span id="activeSymbol">—</span>
+          </div>
+          <canvas id="priceChart" width="980" height="420" aria-label="نمودار تحلیل قیمت"></canvas>
+        </div>
+        <div class="card signals-card">
+          <div class="section-title">
+            <h2>خلاصه سیگنال‌ها</h2>
+            <span>Entry / Exit</span>
+          </div>
+          <div id="signals" class="signals-grid"></div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
