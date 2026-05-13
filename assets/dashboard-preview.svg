@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">نمای تصویری داشبورد سیگنال رمز ارز</title>
+  <desc id="desc">یک پیش‌نمایش تاریک از داشبورد فارسی با نمودار قیمت، میانگین‌های متحرک، باند بولینگر و کارت‌های ورود و خروج.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="0.55" stop-color="#0f1b30"/>
+      <stop offset="1" stop-color="#06101d"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="84%" cy="8%" r="55%">
+      <stop offset="0" stop-color="#38bdf8" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="12%" cy="88%" r="50%">
+      <stop offset="0" stop-color="#22c55e" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#22c55e" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="22" stdDeviation="24" flood-color="#000" flood-opacity="0.32"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="760" fill="url(#bg)"/>
+  <rect width="1200" height="760" fill="url(#glow1)"/>
+  <rect width="1200" height="760" fill="url(#glow2)"/>
+
+  <g font-family="Tahoma, Arial, sans-serif" direction="rtl">
+    <rect x="48" y="42" width="1104" height="148" rx="28" fill="#0f1b30" opacity="0.92" stroke="#334155" filter="url(#shadow)"/>
+    <text x="1108" y="88" fill="#38bdf8" font-size="22" font-weight="700" text-anchor="end">داشبورد تحلیل تکنیکال</text>
+    <text x="1108" y="132" fill="#e5edf8" font-size="42" font-weight="900" text-anchor="end">نقاط ورود و خروج چند رمز ارز</text>
+    <text x="1108" y="166" fill="#9fb1c9" font-size="19" text-anchor="end">MA200 · MA100 · MACD 14 · RSI · Bollinger Bands</text>
+    <rect x="72" y="76" width="265" height="82" rx="20" fill="#f59e0b" opacity="0.12" stroke="#f59e0b" stroke-opacity="0.38"/>
+    <text x="300" y="110" fill="#fde68a" font-size="20" font-weight="700" text-anchor="end">هشدار ریسک</text>
+    <text x="300" y="140" fill="#fde68a" font-size="15" text-anchor="end">خروجی توصیه مالی نیست</text>
+
+    <rect x="48" y="214" width="1104" height="88" rx="24" fill="#0f1b30" opacity="0.90" stroke="#334155"/>
+    <rect x="852" y="238" width="260" height="40" rx="14" fill="#020617" opacity="0.55" stroke="#334155"/>
+    <text x="1090" y="264" fill="#e5edf8" font-size="16" text-anchor="end">BTCUSDT, ETHUSDT, SOLUSDT</text>
+    <rect x="654" y="238" width="158" height="40" rx="14" fill="#020617" opacity="0.55" stroke="#334155"/>
+    <text x="782" y="264" fill="#e5edf8" font-size="16" text-anchor="end">روزانه</text>
+    <rect x="468" y="238" width="146" height="40" rx="14" fill="#020617" opacity="0.55" stroke="#334155"/>
+    <text x="585" y="264" fill="#e5edf8" font-size="16" text-anchor="end">365 کندل</text>
+    <rect x="84" y="232" width="170" height="52" rx="18" fill="#38bdf8"/>
+    <text x="169" y="265" fill="#04111f" font-size="19" font-weight="900" text-anchor="middle">تحلیل کن</text>
+
+    <rect x="48" y="326" width="710" height="376" rx="26" fill="#0f1b30" opacity="0.92" stroke="#334155" filter="url(#shadow)"/>
+    <text x="716" y="372" fill="#e5edf8" font-size="24" font-weight="800" text-anchor="end">نمودار قیمت و سطوح کلیدی</text>
+    <text x="92" y="372" fill="#9fb1c9" font-size="18" direction="ltr">BTCUSDT · DEMO</text>
+    <rect x="84" y="402" width="638" height="250" rx="18" fill="#020617" opacity="0.72"/>
+    <g stroke="#94a3b8" stroke-opacity="0.15" stroke-width="1">
+      <line x1="110" y1="442" x2="700" y2="442"/><line x1="110" y1="494" x2="700" y2="494"/><line x1="110" y1="546" x2="700" y2="546"/><line x1="110" y1="598" x2="700" y2="598"/>
+    </g>
+    <path d="M112 590 C170 570, 198 600, 252 554 S342 506, 394 520 S484 462, 538 475 S636 416, 696 430" fill="none" stroke="#334155" stroke-width="3" opacity="0.9"/>
+    <path d="M112 548 C170 535, 208 552, 262 520 S350 482, 404 496 S488 442, 546 448 S632 392, 696 398" fill="none" stroke="#f59e0b" stroke-width="4"/>
+    <path d="M112 570 C176 548, 214 560, 270 512 S352 470, 410 480 S496 420, 552 424 S632 370, 696 372" fill="none" stroke="#38bdf8" stroke-width="4"/>
+    <path d="M112 582 C174 552, 208 574, 268 500 S348 462, 410 472 S492 395, 558 408 S632 345, 696 354" fill="none" stroke="#22c55e" stroke-width="6" stroke-linecap="round"/>
+    <g font-size="14" fill="#cbd5e1" direction="ltr">
+      <rect x="118" y="420" width="18" height="4" fill="#22c55e"/><text x="144" y="426">Price</text>
+      <rect x="210" y="420" width="18" height="4" fill="#38bdf8"/><text x="236" y="426">MA100</text>
+      <rect x="318" y="420" width="18" height="4" fill="#f59e0b"/><text x="344" y="426">MA200</text>
+      <rect x="426" y="420" width="18" height="4" fill="#334155"/><text x="452" y="426">Bollinger</text>
+    </g>
+
+    <rect x="784" y="326" width="368" height="376" rx="26" fill="#0f1b30" opacity="0.92" stroke="#334155" filter="url(#shadow)"/>
+    <text x="1110" y="372" fill="#e5edf8" font-size="24" font-weight="800" text-anchor="end">خلاصه سیگنال‌ها</text>
+    <g transform="translate(816 402)">
+      <rect width="304" height="82" rx="18" fill="#0f172a" stroke="#334155"/>
+      <text x="280" y="30" fill="#e5edf8" font-size="20" font-weight="900" text-anchor="end" direction="ltr">BTCUSDT</text>
+      <rect x="24" y="16" width="70" height="30" rx="15" fill="#22c55e" opacity="0.18"/><text x="58" y="37" fill="#86efac" font-size="15" font-weight="900" text-anchor="middle">ورود</text>
+      <rect x="30" y="58" width="110" height="8" rx="4" fill="#334155"/><rect x="30" y="58" width="86" height="8" rx="4" fill="#22c55e"/>
+      <text x="280" y="66" fill="#9fb1c9" font-size="14" text-anchor="end">قیمت بالاتر از MA100 و MA200</text>
+    </g>
+    <g transform="translate(816 502)">
+      <rect width="304" height="82" rx="18" fill="#0f172a" stroke="#334155"/>
+      <text x="280" y="30" fill="#e5edf8" font-size="20" font-weight="900" text-anchor="end" direction="ltr">ETHUSDT</text>
+      <rect x="24" y="16" width="70" height="30" rx="15" fill="#f59e0b" opacity="0.18"/><text x="58" y="37" fill="#fcd34d" font-size="15" font-weight="900" text-anchor="middle">انتظار</text>
+      <rect x="30" y="58" width="110" height="8" rx="4" fill="#334155"/><rect x="30" y="58" width="48" height="8" rx="4" fill="#f59e0b"/>
+      <text x="280" y="66" fill="#9fb1c9" font-size="14" text-anchor="end">تایید کافی وجود ندارد</text>
+    </g>
+    <g transform="translate(816 602)">
+      <rect width="304" height="82" rx="18" fill="#0f172a" stroke="#334155"/>
+      <text x="280" y="30" fill="#e5edf8" font-size="20" font-weight="900" text-anchor="end" direction="ltr">SOLUSDT</text>
+      <rect x="24" y="16" width="70" height="30" rx="15" fill="#ef4444" opacity="0.18"/><text x="58" y="37" fill="#fca5a5" font-size="15" font-weight="900" text-anchor="middle">خروج</text>
+      <rect x="30" y="58" width="110" height="8" rx="4" fill="#334155"/><rect x="30" y="58" width="76" height="8" rx="4" fill="#ef4444"/>
+      <text x="280" y="66" fill="#9fb1c9" font-size="14" text-anchor="end">MACD زیر خط سیگنال</text>
+    </g>
+  </g>
+</svg>

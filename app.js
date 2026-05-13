@@ -234,11 +234,25 @@ function renderSignals(results) {
         <span class="symbol">${result.symbol}</span>
         <span class="badge ${result.action}">${actionLabel(result.action)}</span>
       </div>
+      <div class="signal-score" aria-label="امتیاز ورود و خروج">
+        <div>
+          <span>قدرت ورود</span>
+          <strong>${result.entryScore}/4</strong>
+          <i style="--score: ${Math.min(result.entryScore, 4) * 25}%"></i>
+        </div>
+        <div>
+          <span>ریسک خروج</span>
+          <strong>${result.exitScore}/4</strong>
+          <i style="--score: ${Math.min(result.exitScore, 4) * 25}%"></i>
+        </div>
+      </div>
       <div class="metrics">
         <div>قیمت: <span>${formatPrice(result.latest.price)}</span></div>
         <div>RSI: <span>${formatPrice(result.latest.rsi)}</span></div>
         <div>MA100: <span>${formatPrice(result.latest.ma100)}</span></div>
         <div>MA200: <span>${formatPrice(result.latest.ma200)}</span></div>
+        <div>MACD: <span>${formatPrice(result.latest.macdHistogram)}</span></div>
+        <div>BB Mid: <span>${formatPrice(result.latest.bollinger.middle)}</span></div>
       </div>
       <ul class="reasons">
         ${result.reasons.length ? result.reasons.map((reason) => `<li>${reason}</li>`).join('') : '<li>تایید کافی برای ورود یا خروج وجود ندارد.</li>'}
@@ -341,11 +355,12 @@ function drawLegend(context) {
   });
 }
 
-function makeDemoCandles(limit = DEFAULT_LIMIT) {
-  let price = 42000;
+function makeDemoCandles(limit = DEFAULT_LIMIT, basePrice = 42000) {
+  let price = basePrice;
   return Array.from({ length: limit }, (_, index) => {
     const wave = Math.sin(index / 15) * 900 + Math.cos(index / 29) * 500;
-    price = Math.max(1000, price + wave * 0.02 + (Math.random() - 0.45) * 260);
+    const pulse = Math.sin(index * 1.73) * 120 + Math.cos(index * 0.37) * 90;
+    price = Math.max(1000, price + wave * 0.02 + pulse);
     return {
       time: Date.now() - (limit - index) * 86_400_000,
       open: price * 0.99,
@@ -355,6 +370,17 @@ function makeDemoCandles(limit = DEFAULT_LIMIT) {
       volume: 1000 + index,
     };
   });
+}
+
+function renderDemoPreview() {
+  const demoMarkets = [
+    analyzeMarket(makeDemoCandles(DEFAULT_LIMIT, 42000), 'BTCUSDT · DEMO'),
+    analyzeMarket(makeDemoCandles(DEFAULT_LIMIT, 2600), 'ETHUSDT · DEMO'),
+    analyzeMarket(makeDemoCandles(DEFAULT_LIMIT, 145), 'SOLUSDT · DEMO'),
+  ];
+  renderSignals(demoMarkets);
+  renderChart(demoMarkets[0]);
+  document.querySelector('#status').textContent = 'نمای تصویری آماده است؛ برای داده زنده روی «تحلیل کن» بزنید.';
 }
 
 async function runAnalysis() {
@@ -392,4 +418,5 @@ async function runAnalysis() {
 
 if (typeof document !== 'undefined') {
   document.querySelector('#analyzeBtn').addEventListener('click', runAnalysis);
+  renderDemoPreview();
 }
